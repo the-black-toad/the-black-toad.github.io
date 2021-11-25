@@ -33,4 +33,5 @@ Essentially, when the check of the filesystem namespace is passed to another par
 
 In Linux 5.11, they moved the check back into the execution part which fixes the vuln.
 
+Link to the room: https://tryhackme.com/room/overlayfs
 
