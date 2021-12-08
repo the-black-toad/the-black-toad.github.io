@@ -1,0 +1,63 @@
+---
+layout: post
+title: "The Watcher | THM "
+date: 2021-12-08 06:00:00 -0000
+categories: CTF THM
+---
+
+Hello - It has been awhile because I only want to post write-ups where I did not use any external help to complete the rooms. 
+
+
+<h3>Executive Summary</h3>
+
+This webserver has a vulnerable php function that allows the grabbing of any file on the server. Combine this with a FTP server that allows the uploading of files and you have initial access.
+From there, unsecured scripts and abuse of the sudo -u allows the user to pivot around the webserver. 
+Finally, a poorly encoded and backed up id_rsa key allows root access. 
+
+
+<h3>Technical Details</h3>
+<h2>Enumeration</h2>
+Nmap reveals the following ports are open on the server: 
+
+21/tcp open  ftp
+22/tcp open  ssh
+80/tcp open  http
+
+First, stop is FTP. The anonymous user is blocked so lets enumerate the webserver. We can enumerate all of the directories by sing our favorite directory enumeration tool: gobuster.
+
+We find that there is a robots.txt that is up on the server. Accessing that shows that there are two text files. Here is where we pick up the first flag. The second text file here is not accesible. Through our enumeration we also see that there are 
+various php files that are serving content to the webserver. One of them has an inseucre ?post= function. 
+
+We can use the php filter trick to grab the source code of the actual function. php://filter/convert.base64-encode/resource=post.php. Drop that into cyberchef and you can see that it is just a GET() function.
+OK! lets see what we can grab from the webserver. After proving we can grab files like /etc/passwd, lets see if we can grab that second file from the robots.txt
+
+We can! We find a note and some credentials to the ftp server. 
+
+Hi Mat,
+
+The credentials for the FTP server are below. I've set the files to be saved to /home/ftpuser/ftp/files.
+
+Will
+
+Ok, so we have a path to the files and a flag on the ftp server. If we can upload to that directory, we should be able to call that file from the php function.
+So, we upload a reverse php shell with the ftp put command and then point the web browser to that directory for our first shell on the machine.
+
+<h2>Initial Foothold</h2>
+
+Once we have the shell on the machine, we can look around and see if there is anything intestesting. IT took me a while and I looked at most things, until I realized that using sudo -l shows that we can run commands as toby.
+
+<h2>Lateral Movement</h2>
+
+We can use the Sudo -u toby ro rewrite a .sh script that runs on the cron schedule. We can rewrite a simple bash reverse shell to get into the user Mat's account. 
+
+Using the same trick, we see that we have the ability to run a python script as will. This python script calls a cmd function and that is in the same directory. If we edit that command function to spawn a shell, when we run the first script, we get a new shell as will.
+
+Now again I became stuck here for a while, but the hint points us to a link on connecting to ssh by key files. I spend some time enumerating the box for keys and don't find anything. 
+Then I run the id command to check what groups the user is in and find that will is in the adm group. If we search for files owned by the adm group we find a myriad of keys. 
+
+One sticks out as base64 encoded. We transfer that file to our machine, set the correct permissions, and try with root. 
+
+
+<h2>Priv Esc </h2>
+
+There we go! We have root. Read that file and get out of there! 
