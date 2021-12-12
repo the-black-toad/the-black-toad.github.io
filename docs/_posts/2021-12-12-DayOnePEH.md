@@ -5,15 +5,14 @@ date: 2021-12-12 17:17:00 -0000
 categories: Course
 ---
 
-Taking notes on the course of of Practical Ethical hacking. This is just a blog post going over the first few sessions. 
+Taking notes on the course of of Practical Ethical hacking. This is just a blog post going over the first few sessions.  
 
-Notekeeping is super important! 
-Make sure that you have a good notekeeping application and some good notekeeping habits. Screenshots and organizations are nice and they speed things up. Sometimes 
-clients will come back 6 months later and they want to know what you did at what time. Keepnote is the application that he uses. Cherrytree, OneNote, and Joplin.
+Notekeeping is super important!  
+Make sure that you have a good notekeeping application and some good notekeeping habits. Screenshots and organizations are nice and they speed things up. He made the point that sometimes 
+clients will come back 6 months later and they want to know what you did at what time. Keepnote is the application that he uses. Cherrytree, OneNote, and Joplin. ( I have started to use keepnote as it is a simple program ) Flameshot runs great on arch as well.  
 
-Networking - the classic foundational skill. 
-IP addresses are made up of 8 bytes and there are four quartets. 0-255 for each section. 4 billion possible ip addresses. 
-IPv6 128 bits with large number of addresses. NAT is the solution for extending multiple IP addresses. 
+Networking - the classic foundational skill.   
+IP addresses are made up of 8 bytes and there are four quartets of these 8 bytes. Within each section, there are 0-255 possible values. There are 4 billion possible ipv4 addresses. IPv6 was introduced to solve this problem, but as they are non-human friendly addresses people tended to stay with IPv4 and use NAT. NAT is a solution for extending multiple IP addresses. 
 
 Remember that there are different types of networks broken up to server different shapes of networks. 
 
