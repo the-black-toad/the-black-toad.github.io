@@ -26,11 +26,11 @@ Heath has also provided the greatest memonic for the OSI stack:
 | # | phrase | layer | example | 
 | --- | --- | --- | --- |
 | 1 | Please | Physical | data cables, cat6 | 
-| 2 | Do | Switching | MAc addreses | 
-| 3 | Not | Networking | Ip Addresses, routing |  
+| 2 | Do | Switching | MAC addreses | 
+| 3 | Not | Networking | Ip addresses, routing |  
 | 4 | Throw | Transport | TCP/UDP | 
-| 5 | Sasusage | Session | session managment |  
-| 6 | Pizza | Presesntation | WMV | 
+| 5 | Sausage | Session | Session managment |  
+| 6 | Pizza | Presentation | WMV | 
 | 7 | Away | Application | HTTP, SMTP |   
 
 MAC Addresses - media access control or burned in address. Physical address that is tied to the manufacturer. Layer 2. 
