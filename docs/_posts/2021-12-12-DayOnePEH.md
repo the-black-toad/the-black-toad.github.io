@@ -21,6 +21,17 @@ Remember that there are different types of networks broken up to server differen
 |Class A network | 10.0.0.0 | 255.0.0.0 | 126 | ~16,000,000 |
 |Class B network | 172.16-31.0.0 | 255.255.0.0 | ~16,000 | ~65,000 |
 |Class C network | 192.168.0-255.0-255 | 255.255.255.0 | ~2,000,000 | ~254 |
+  
+Heath has also provided the greatest memonic for the OSI stack: 
+| # | phrase | layer | example | 
+| --- | --- | --- | --- |
+| 1 | Please | Physical | data cables, cat6 | 
+| 2 | Do | Switching | MAc addreses | 
+| 3 | Not | Networking | Ip Addresses, routing |  
+| 4 | Throw | Transport | TCP/UDP | 
+| 5 | Sasusage | Session | session managment |  
+| 6 | Pizza | Presesntation | WMV | 
+| 7 | Away | Application | HTTP, SMTP |   
 
 MAC Addresses - media access control or burned in address. Physical address that is tied to the manufacturer. Layer 2. 
 
@@ -32,4 +43,6 @@ The common ports
 SMB 139 + 445 the classic ports. Wannacry and Eternal Blue. See this a lot out in the wild.
 
 Then, TCM goes through a great overview of subnetting including a very good chart. Having taken Keith Barker's course on youtube, I would recommend using a mixture of both of these methods. Subnetting just took repetition for me to really understand it. If you also take the time to work out the problems with a pen and paper that helps as well. Following that there is a discussion on how to get 
-VMs set-up on your machine. But, hey, we use arch here so no need for that. 
+VMs set-up on your machine. But, hey, we use arch here so no need for that.  
+
+(I also figured out tables in markdown) 
