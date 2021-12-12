@@ -16,10 +16,12 @@ IP addresses are made up of 8 bytes and there are four quartets. 0-255 for each 
 IPv6 128 bits with large number of addresses. NAT is the solution for extending multiple IP addresses. 
 
 Remember that there are different types of networks broken up to server different shapes of networks. 
------------------ Net. Numbers  -----  Net. Mask  --- No. of Networks -  No. Hosts    
-Class A network - 10.0.0.0             255.0.0.0      126                ~16,000,000
-Class B network - 172.16-31.0.0        255.255.0.0    ~16,000            ~65,000
-Class C network - 192.168.0-255.0-255  255.255.255.0  ~2,000,000         ~254
+
+|  Net. Numbers | Net. Mask | No. of Networks | No. Hosts |    
+| --- | --- | --- | --- |
+|Class A network | 10.0.0.0 | 255.0.0.0 | 126 | ~16,000,000 |
+|Class B network | 172.16-31.0.0 | 255.255.0.0 | ~16,000 | ~65,000 |
+|Class C network | 192.168.0-255.0-255 | 255.255.255.0 | ~2,000,000 | ~254 |
 
 MAC Addresses - media access control or burned in address. Physical address that is tied to the manufacturer. Layer 2. 
 
