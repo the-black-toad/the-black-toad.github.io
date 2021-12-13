@@ -22,7 +22,8 @@ Remember that there are different types of networks broken up to server differen
 |Class B network | 172.16-31.0.0 | 255.255.0.0 | ~16,000 | ~65,000 |
 |Class C network | 192.168.0-255.0-255 | 255.255.255.0 | ~2,000,000 | ~254 |
   
-Heath has also provided the greatest memonic for the OSI stack: 
+Heath has also provided the greatest memonic for the OSI stack:  
+
 | # | phrase | layer | example | 
 | --- | --- | --- | --- |
 | 1 | Please | Physical | data cables, cat6 | 
