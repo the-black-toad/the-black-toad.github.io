@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Ultratech| THM "
+title: "Ultratech | THM "
 date: 2021-12-13 17:17:00 -0000
 categories: CTF THM
 ---
