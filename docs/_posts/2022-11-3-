@@ -1,0 +1,14 @@
+---
+layout: post
+title: "Remote Pen Test w/ Pi | WP "
+date: 2022-11-2 23:28:00 -0000
+categories: WhitePaper SANS
+---
+
+<h2>Pentesting and Pis?? </h2> 
+
+<p> Full title: Remote Penetration TEsting with Ninja Pi</p>
+<p> Author: Jeremy Druin </p>
+
+<h2> Summary </h2>
+<p> Thought this was going to be more interesting, but it is just a guide to setting a Pi as an on prem launching point for pentesting. </p>
