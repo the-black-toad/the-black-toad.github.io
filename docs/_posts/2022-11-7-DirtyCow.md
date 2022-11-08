@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Linux Priv Esc | WP "
-date: 2022-11-3 23:52:00 -0000
+date: 2022-11-7 23:34:00 -0000
 categories: WhitePaper SANS
 ---
 
@@ -18,4 +18,5 @@ categories: WhitePaper SANS
   consisted of failing the password check 93 times were then the system would drop the user in a root shell. The filesystem is still protected, but further vulnerabilities 
   could be introduced. </p>
   
-  <p> more on the dirty cow vuln: 
+  <p> more on the dirty cow vuln: the race condition is caused by racing the madvise(MADV_DONTNEED) system call while
+  having a the page of the executable mapped in memory. So there are two funcitons, one that is calling the madvise and the other that is reading the executable.(https://github.com/dirtycow/dirtycow.github.io/blob/master/dirtyc0w.c) In the madvise function, the function of the madvise system call is "used to give advice or directions to the kernel about the address range begging at address addr and with size length bytes." (https://man7.org/linux/man-pages/man2/madvise.2.html) So the madvise function calls that one million times. The second function of the code is writing to /proc/self/mem folder and reseting the file pointer to that memory position a million times. Call both of those functions in two threads and you have a race. Then at the same time, you open the filepath provided in read only. The result is that you can overwrite that file. see https://github.com/dirtycow/dirtycow.github.io/wiki/VulnerabilityDetails for a better write up!! </p>   
